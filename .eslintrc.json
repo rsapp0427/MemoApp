@@ -3,7 +3,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -11,12 +11,9 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react"],
   "rules": {
-    "react/function-component-definition": [
-      2,
-      { "namedComponents": "function-declaration" }
-    ],
-    "no-use-before-define": 0
+    // "no-use-before-define": 0,
+    "prefer-default-export": "false"
   }
 }
