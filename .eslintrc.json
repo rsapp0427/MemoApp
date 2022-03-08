@@ -13,7 +13,17 @@
   },
   "plugins": ["react"],
   "rules": {
-    // "no-use-before-define": 0,
-    "prefer-default-export": "false"
+    "no-use-before-define": 0,
+    "import/prefer-default-export": 0,
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"]
+      }
+    ],
+    "react/prop-types": 0,
+    "arrow-body-style": ["error", "always"],
+    "react/jsx-curly-brace-presence": 0,
+    "no-unused-vars": 1
   }
 }
