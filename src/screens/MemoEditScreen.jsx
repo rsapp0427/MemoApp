@@ -4,6 +4,7 @@ import {
   TextInput,
   StyleSheet,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 import { AppBar } from '../components/AppBar';
 import { CircleButton } from '../components/CircleButton';
