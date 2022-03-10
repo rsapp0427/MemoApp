@@ -1,15 +1,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { AppBar } from '../components/AppBar';
 import { MemoList } from '../components/MemoList';
 import { CircleButton } from '../components/CircleButton';
 
-export const MemoListScreen = () => {
+export const MemoListScreen = (props) => {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
-      <AppBar />
       <MemoList />
-      <CircleButton name={'plus'} />
+      <CircleButton
+        name={'plus'}
+        onPress={() => {
+          navigation.navigate('MemoCreate');
+        }}
+      />
     </View>
   );
 };
