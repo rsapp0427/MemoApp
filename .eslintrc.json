@@ -24,6 +24,7 @@
     "react/prop-types": [2, { "ignore": ["navigation"] }],
     "arrow-body-style": ["error", "always"],
     "react/jsx-curly-brace-presence": 0,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "react/no-unstable-nested-components": 0
   }
 }
