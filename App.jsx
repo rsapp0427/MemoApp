@@ -16,6 +16,8 @@ import { SignUpScreen } from './src/screens/SignUpScreen';
 
 const Stack = createStackNavigator();
 
+require('firebase/firestore');
+
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
