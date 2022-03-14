@@ -10,6 +10,7 @@ import {
 import firebase from 'firebase';
 import { Button } from '../components/Button';
 import { Loading } from '../components/Loading';
+import { translateErrors } from '../utils';
 
 export const LogInScreen = (props) => {
   const { navigation } = props;
@@ -44,7 +45,8 @@ export const LogInScreen = (props) => {
         });
       })
       .catch((error) => {
-        Alert.alert(error.code);
+        const errorMsg = translateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
       })
       .then(() => {
         setLoading(false);

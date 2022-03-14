@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import firebase from 'firebase';
 import { Button } from '../components/Button';
+import { translateErrors } from '../utils';
 
 export const SignUpScreen = (props) => {
   const { navigation } = props;
@@ -24,7 +25,8 @@ export const SignUpScreen = (props) => {
         navigation.reset({ index: 0, routes: [{ name: 'MemoList' }] });
       })
       .catch((error) => {
-        Alert.alert(error.code);
+        const errorMsg = translateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
       });
   };
 
