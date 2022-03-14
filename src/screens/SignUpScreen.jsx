@@ -20,8 +20,7 @@ export const SignUpScreen = (props) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
+      .then(() => {
         navigation.reset({ index: 0, routes: [{ name: 'MemoList' }] });
       })
       .catch((error) => {

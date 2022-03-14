@@ -4,9 +4,11 @@ import {
   TextInput,
   StyleSheet,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 import firebase from 'firebase';
 import { CircleButton } from '../components/CircleButton';
+import { translateErrors } from '../utils';
 
 export const MemoCreateScreen = (props) => {
   const [bodyText, setBodyText] = useState('');
@@ -21,10 +23,13 @@ export const MemoCreateScreen = (props) => {
         bodyText,
         updatedAt: new Date(),
       })
-      .then((docRef) => {
+      .then(() => {
         navigation.goBack();
       })
-      .catch((error) => {});
+      .catch((error) => {
+        const errorMsg = translateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
+      });
   };
   return (
     <KeyboardAvoidingView style={styles.container} behavior="height">

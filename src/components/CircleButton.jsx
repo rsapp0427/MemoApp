@@ -12,7 +12,7 @@ export const CircleButton = (props) => {
   );
 };
 
-CircleButton.prototype = {
+CircleButton.propTypes = {
   style: shape(),
   name: string.isRequired,
   onPress: func,
