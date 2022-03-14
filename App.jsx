@@ -1,4 +1,5 @@
 import React from 'react';
+import { LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   createStackNavigator,
@@ -15,6 +16,8 @@ import { LogInScreen } from './src/screens/LogInScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen';
 
 const Stack = createStackNavigator();
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 require('firebase/firestore');
 
