@@ -45,7 +45,10 @@ export const MemoDetailScreen = (props) => {
         style={{ top: 60, bottom: 'auto' }}
         name={'edit-2'}
         onPress={() => {
-          navigation.navigate('MemoEdit');
+          navigation.navigate('MemoEdit', {
+            id: memo.id,
+            bodyText: memo.bodyText,
+          });
         }}
       />
     </View>
