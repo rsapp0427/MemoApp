@@ -22,12 +22,9 @@ export const MemoCreateScreen = (props) => {
         updatedAt: new Date(),
       })
       .then((docRef) => {
-        console.log('Created!', docRef.id);
         navigation.goBack();
       })
-      .catch((error) => {
-        console.log('Error!', error);
-      });
+      .catch((error) => {});
   };
   return (
     <KeyboardAvoidingView style={styles.container} behavior="height">
