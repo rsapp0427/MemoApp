@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MemoApp",
-    "slug": "MemoApp",
+    "name": "PersonalNote",
+    "slug": "PersonalNote",
     "version": "1.0.0",
     "privacy": "unlisted",
     "orientation": "portrait",
@@ -19,11 +19,11 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier":"rsapp.memoapp",
+      "bundleIdentifier":"rsApp.personalNote",
       "buildNumber":"1.0.0"
     },
     "android": {
-      "package":"rsapp.memoapp",
+      "package":"rsApp.personalNote",
       "versionCode":1,
       "permissions":[],
       "adaptiveIcon": {
