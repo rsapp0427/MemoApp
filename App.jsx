@@ -16,6 +16,7 @@ import { LogInScreen } from './src/screens/LogInScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen';
 
 const Stack = createStackNavigator();
+console.log(Stack);
 
 LogBox.ignoreLogs(['Setting a timer']);
 
@@ -31,9 +32,9 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="LogIn"
         screenOptions={{
-          headerStyle: { backgroundColor: '#467FD3' },
+          headerStyle: { backgroundColor: '#4EBFB8', height: 104 },
           headerTitleStyle: { color: 'white' },
-          headerTitle: 'Memo App',
+          headerTitle: 'PersonalNote',
           headerTintColor: 'white',
           headerBackTitle: 'Back',
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -43,7 +44,11 @@ export default function App() {
       >
         <Stack.Screen name="MemoList" component={MemoListScreen} />
         <Stack.Screen name="MemoDetail" component={MemoDetailScreen} />
-        <Stack.Screen name="MemoEdit" component={MemoEditScreen} />
+        <Stack.Screen
+          name="MemoEdit"
+          component={MemoEditScreen}
+          stack={Stack}
+        />
         <Stack.Screen name="MemoCreate" component={MemoCreateScreen} />
         <Stack.Screen
           name="LogIn"
