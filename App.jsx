@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogBox } from 'react-native';
+import { LogBox, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   createStackNavigator,
@@ -14,9 +14,9 @@ import { MemoEditScreen } from './src/screens/MemoEditScreen';
 import { MemoCreateScreen } from './src/screens/MemoCreateScreen';
 import { LogInScreen } from './src/screens/LogInScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen';
+import { BackButton } from './src/components/BackButton';
 
 const Stack = createStackNavigator();
-console.log(Stack);
 
 LogBox.ignoreLogs(['Setting a timer']);
 
@@ -26,17 +26,29 @@ if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
 
+const styles = StyleSheet.create({
+  header: {
+    height: 104,
+    backgroundColor: '#4EBFB8',
+  },
+});
+
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="LogIn"
         screenOptions={{
-          headerStyle: { backgroundColor: '#4EBFB8', height: 104 },
+          headerStyle: styles.header,
           headerTitleStyle: { color: 'white' },
           headerTitle: 'PersonalNote',
+          headerTitleAlign: 'center',
           headerTintColor: 'white',
-          headerBackTitle: 'Back',
+          headerBackTitle: '戻る',
+          headerBackTitleVisible: true,
+          headerBackImage: () => {
+            return <BackButton />;
+          },
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           gestureEnabled: true,
           gestureDirection: 'horizontal',

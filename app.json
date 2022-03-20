@@ -2,7 +2,7 @@
   "expo": {
     "name": "PersonalNote",
     "slug": "PersonalNote",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,11 +20,11 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier":"rsApp.personalNote",
-      "buildNumber":"1.0.0"
+      "buildNumber":"1.0.3"
     },
     "android": {
       "package":"rsApp.personalNote",
-      "versionCode":1,
+      "versionCode":4,
       "permissions":[],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon_adaptive_foreground.png",

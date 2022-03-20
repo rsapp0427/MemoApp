@@ -7,11 +7,11 @@ import {
   Alert,
   FlatList,
 } from 'react-native';
-import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { shape, string, instanceOf, arrayOf } from 'prop-types';
 import firebase from 'firebase';
 import { dateToString } from '../utils';
+import { Icon } from './Icon';
 
 export const MemoList = (props) => {
   const { memos } = props;
@@ -62,7 +62,7 @@ export const MemoList = (props) => {
             deleteMemo(item.id);
           }}
         >
-          <Feather name="x" size={16} color={'#B0B0B0'} />
+          <Icon name={'cross'} size={16} color={'#B0B0B0'} />
         </TouchableOpacity>
       </TouchableOpacity>
     );

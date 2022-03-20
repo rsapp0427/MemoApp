@@ -5,6 +5,7 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Alert,
+  Platform,
 } from 'react-native';
 import { shape, string } from 'prop-types';
 import firebase from 'firebase';
@@ -40,7 +41,7 @@ export const MemoEditScreen = (props) => {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior="height"
+      behavior={Platform.OS === 'ios' ? 'padding' : null}
       keyboardVerticalOffset={104}
     >
       <View style={styles.inputContainer}>
@@ -53,7 +54,7 @@ export const MemoEditScreen = (props) => {
           }}
         />
       </View>
-      <CircleButton name="check" onPress={handlePress} />
+      <CircleButton name={'checkmark'} onPress={handlePress} />
     </KeyboardAvoidingView>
   );
 };

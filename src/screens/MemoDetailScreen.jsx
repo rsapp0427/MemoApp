@@ -44,7 +44,7 @@ export const MemoDetailScreen = (props) => {
       </ScrollView>
       <CircleButton
         style={{ top: 60, bottom: 'auto' }}
-        name={'edit-2'}
+        name={'pen'}
         onPress={() => {
           navigation.navigate('MemoEdit', {
             id: memo.id,
