@@ -16,21 +16,23 @@ export const MemoCreateScreen = (props) => {
 
   const { navigation } = props;
   const handlePress = () => {
-    const { currentUser } = firebase.auth();
-    const db = firebase.firestore();
-    const ref = db.collection(`users/${currentUser.uid}/memos`);
-    ref
-      .add({
-        bodyText,
-        updatedAt: new Date(),
-      })
-      .then(() => {
-        navigation.goBack();
-      })
-      .catch((error) => {
-        const errorMsg = translateErrors(error.code);
-        Alert.alert(errorMsg.title, errorMsg.description);
-      });
+    if (bodyText.trim()) {
+      const { currentUser } = firebase.auth();
+      const db = firebase.firestore();
+      const ref = db.collection(`users/${currentUser.uid}/memos`);
+      ref
+        .add({
+          bodyText,
+          updatedAt: new Date(),
+        })
+        .then(() => {
+          navigation.goBack();
+        })
+        .catch((error) => {
+          const errorMsg = translateErrors(error.code);
+          Alert.alert(errorMsg.title, errorMsg.description);
+        });
+    }
   };
   return (
     <KeyboardAvoidingView
